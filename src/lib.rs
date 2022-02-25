@@ -148,6 +148,10 @@ impl CANSocket {
         self.0.get_ref().0.filter_accept_all()
     }
 
+    pub fn set_fd_frames(&self, fd_frames_enable: bool) -> io::Result<()> {
+        self.0.get_ref().0.set_fd_frames(fd_frames_enable)
+    }
+
     pub fn set_error_filter(&self, mask: u32) -> io::Result<()> {
         self.0.get_ref().0.set_error_filter(mask)
     }
